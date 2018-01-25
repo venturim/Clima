@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    let itens = ["fernando","leonardo","cleia","arnobio"]
+    var itens = ["fernando","leonardo","cleia","arnobio"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,31 @@ class ViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    @IBAction func AddPress(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add Novo ", message: "", preferredStyle:.alert)
+        
+        
+        let action = UIAlertAction(title: "Add Item", style: .default){(action) in
+            
+            print("Sucesso");
+             print(textField.text)
+            self.itens.append(textField.text!)
+            self.tableView.reloadData()
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Criar novo"
+            textField = alertTextField
+           
+        }
+        alert.addAction(action)
+        
+       present(alert, animated:true, completion: nil)
+        
+        
     }
 }
 

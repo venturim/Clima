@@ -35,6 +35,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Tooodo" id="35j-xx-M6K" colorLabel="IBBuiltInLabel-Blue">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="WNL-Vf-A0Y"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="b3M-qa-9NW">
+                            <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="AddPress:" destination="D6R-RW-U3G" id="D8L-ow-KaG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eu0-Da-M3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
